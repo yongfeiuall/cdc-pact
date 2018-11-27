@@ -28,7 +28,7 @@ public class ConsumerTest {
 		
 		DslPart resbody = new PactDslJsonBody()
 				.stringType("name", "zhangsan")
-				.integerType("age", 5)
+				.integerType("age", 4)
 				.asBody();
 		
 		return builder

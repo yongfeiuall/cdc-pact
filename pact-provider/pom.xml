@@ -25,7 +25,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.12</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -41,6 +41,19 @@
         <artifactId>spring-test</artifactId>
         <scope>test</scope>
     </dependency>
+<!--     <dependency>
+	    <groupId>com.github.rest-driver</groupId>
+	    <artifactId>rest-client-driver</artifactId>
+	    <version>2.0.0</version>
+	    <scope>test</scope>
+	</dependency> -->
+    
+    <!-- https://mvnrepository.com/artifact/au.com.dius/pact-jvm-provider-junit -->
+	<dependency>
+	    <groupId>au.com.dius</groupId>
+	    <artifactId>pact-jvm-provider-junit_2.12</artifactId>
+	    <version>3.5.24</version>
+	</dependency>
   </dependencies>
   
      <build>  
@@ -53,31 +66,35 @@
 				</configuration>
             </plugin>  
      <plugin>
-    <groupId>au.com.dius</groupId>
-    <artifactId>pact-jvm-provider-maven_2.12</artifactId>
-    <version>3.5.24</version>
-    <configuration>
-      <serviceProviders>
-        <!-- You can define as many as you need, but each must have a unique name -->
-        <serviceProvider>
-          <name>test_provider</name>
-          <!-- All the provider properties are optional, and have sensible defaults (shown below) -->
-          <protocol>http</protocol>
-          <host>localhost</host>
-          <port>8080</port>
-          <path>/</path>
-          <consumers>
-            <!-- Again, you can define as many consumers for each provider as you need, but each must have a unique name -->
-            <consumer>
-              <name>test_consumer</name>
-              <!--  currently supports a file path using pactFile or a URL using pactUrl -->
-              <pactFile>../pact-consumer/target/pacts/test_consumer-test_provider.json</pactFile>
-            </consumer>
-          </consumers>
-        </serviceProvider>
-      </serviceProviders>
-    </configuration>
-</plugin>
+	    <groupId>au.com.dius</groupId>
+	    <artifactId>pact-jvm-provider-maven_2.12</artifactId>
+	    <version>3.5.24</version>
+	    <configuration>
+	      <serviceProviders>
+	        <!-- You can define as many as you need, but each must have a unique name -->
+	        <serviceProvider>
+	          <name>test_provider</name>
+	          <!-- All the provider properties are optional, and have sensible defaults (shown below) -->
+	          <protocol>http</protocol>
+	          <host>localhost</host>
+	          <port>8080</port>
+	          <path>/</path>
+	          <!-- <pactBrokerUrl>http://192.168.220.139:80/</pactBrokerUrl> -->
+	         <!--  <consumers>
+	            Again, you can define as many consumers for each provider as you need, but each must have a unique name
+	            <consumer>
+	              <name>test_consumer</name>
+	               currently supports a file path using pactFile or a URL using pactUrl
+	              <pactFile>../pact-consumer/target/pacts/test_consumer-test_provider.json</pactFile>
+	            </consumer>
+	          </consumers> -->
+	        </serviceProvider>
+	      </serviceProviders>
+	      <configuration>
+	        <pact.verifier.publishResults>true</pact.verifier.publishResults>
+	      </configuration>
+	    </configuration>
+	</plugin>
         </plugins>  
     </build>  
 </project>

@@ -39,7 +39,6 @@ public class GetPersonAge{
 			HttpEntity entity = response.getEntity();
 			if (entity != null) {
 				json = EntityUtils.toString(entity, "UTF-8").trim();
- 
 			}
 
 			System.out.println("Json is: "  + json);

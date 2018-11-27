@@ -4,7 +4,7 @@
 
   <groupId>com.izheyi</groupId>
   <artifactId>pact-consummer</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>pact-consummer</name>
@@ -43,4 +43,24 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
+  <build>
+  <plugins>
+    <plugin>
+	  <!-- mvn pact:publish  -->
+      <groupId>au.com.dius</groupId>
+      <artifactId>pact-jvm-provider-maven_2.11</artifactId>
+      <version>3.5.24</version>
+      <configuration>
+        <!-- <pactDirectory>../pacts</pactDirectory> Defaults to ${project.build.directory}/pacts -->
+        <pactBrokerUrl>http://192.168.220.139:80</pactBrokerUrl>
+        <projectVersion>${project.version}</projectVersion> <!-- Defaults to ${project.version} -->
+        <trimSnapshot>true</trimSnapshot> <!-- Defaults to false -->
+        <tags>
+	        <tag>pact_broker</tag>
+	      </tags>
+      </configuration>
+    </plugin>
+  </plugins>
+  </build>
 </project>
