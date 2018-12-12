@@ -1,12 +1,30 @@
 package com.izheyi.pact_provider;
 
 public class ProviderModel {
-	String name;
-	Integer age;
+	public String id;
+	public String name;
+	public Integer age;
 
 	public ProviderModel(String name, int age) {
 		this.name = name;
 		this.age = age;
+	}
+	
+	public ProviderModel(String id, String name, int age) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+	}
+	
+	public ProviderModel() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getName() {
 		return name;

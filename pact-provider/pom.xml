@@ -41,19 +41,25 @@
         <artifactId>spring-test</artifactId>
         <scope>test</scope>
     </dependency>
-<!--     <dependency>
-	    <groupId>com.github.rest-driver</groupId>
-	    <artifactId>rest-client-driver</artifactId>
-	    <version>2.0.0</version>
+	<!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
+	<dependency>
+	    <groupId>org.mockito</groupId>
+	    <artifactId>mockito-all</artifactId>
+	    <version>1.10.19</version>
 	    <scope>test</scope>
-	</dependency> -->
-    
-    <!-- https://mvnrepository.com/artifact/au.com.dius/pact-jvm-provider-junit -->
+	</dependency>
 	<dependency>
 	    <groupId>au.com.dius</groupId>
 	    <artifactId>pact-jvm-provider-junit_2.12</artifactId>
 	    <version>3.5.24</version>
 	</dependency>
+	<!-- https://mvnrepository.com/artifact/au.com.dius/pact-jvm-provider-spring -->
+	<dependency>
+	    <groupId>au.com.dius</groupId>
+	    <artifactId>pact-jvm-provider-spring_2.12</artifactId>
+	    <version>3.5.24</version>
+	</dependency>
+	
   </dependencies>
   
      <build>  

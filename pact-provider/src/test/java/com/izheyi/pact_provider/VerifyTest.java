@@ -41,20 +41,20 @@ import au.com.dius.pact.provider.junit.target.HttpTarget;
 //
 //}
 
-@RunWith(PactRunner.class) // Say JUnit to run tests with custom Runner
-@Provider("test_provider") // Set up name of tested provider
-@PactBroker(host = "192.168.220.139", port = "80")
-@VerificationReports({"console", "markdown"})
-public class VerifyTest {
-	
-	@BeforeClass //Method will be run once: before whole contract test suite
-    public static void setUpService() {
-		System.setProperty("pact.provider.version", "0.0.1-SNAPSHOT ");
-		System.setProperty("pact.verifier.publishResults", "true");
-    }
-	
-	
-    @TestTarget // Annotation denotes Target that will be used for tests
-    public final Target target = new HttpTarget(8080); // Out-of-the-box implementation of Target (for more information take a look at Test Target section)
-
-}
+//@RunWith(PactRunner.class) // Say JUnit to run tests with custom Runner
+//@Provider("test_provider") // Set up name of tested provider
+//@PactBroker(host = "192.168.220.139", port = "80")
+//@VerificationReports({"console", "markdown"})
+//public class VerifyTest {
+//	
+//	@BeforeClass //Method will be run once: before whole contract test suite
+//    public static void setUpService() {
+//		System.setProperty("pact.provider.version", "0.0.1-SNAPSHOT ");
+//		System.setProperty("pact.verifier.publishResults", "true");
+//    }
+//	
+//	
+//    @TestTarget // Annotation denotes Target that will be used for tests
+//    public final Target target = new HttpTarget(8080); // Out-of-the-box implementation of Target (for more information take a look at Test Target section)
+//
+//}
